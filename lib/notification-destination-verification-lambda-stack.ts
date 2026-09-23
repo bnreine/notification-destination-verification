@@ -125,7 +125,7 @@ export class NotificationDestinationVerificationLambdaStack extends cdk.Stack {
             lambdaFunction: attemptsPostLambda,
             region: this.region,
             apiId,
-            routeKey: 'GET /destinations/{destinationId}/verification-attempts',
+            routeKey: 'POST /destinations/{destinationId}/verification-attempts',
             authorizationType: defaultAuthorizerType,
             authorizerId: defaultAuthorizerId,
         });
