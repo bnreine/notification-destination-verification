@@ -1,6 +1,7 @@
 {
   "name": "notification-destination-verification",
   "version": "0.1.0",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
