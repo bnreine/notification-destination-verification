@@ -2,7 +2,7 @@ import cdk from 'aws-cdk-lib'
 import { PipelineType } from 'aws-cdk-lib/aws-codepipeline'
 import { CodePipelineSource, ShellStep } from 'aws-cdk-lib/pipelines'
 import { Construct } from 'constructs';
-// import { ProductionStage } from './production-stage.js'
+import { ProductionStage } from './production-stage.js'
 
 export interface PipelineStackProps extends cdk.StackProps {
     env: {
@@ -90,13 +90,13 @@ export class PipelineStack extends cdk.Stack {
         });
 
 
-        // pipeline.addStage(
-        //     new ProductionStage(this, 'NotificationDestinationsProductionStage', {
-        //         env: {
-        //             account: this.account,
-        //             region: this.region,
-        //         },
-        //     }),
-        // );
+        pipeline.addStage(
+            new ProductionStage(this, 'NotificationDestinationVerificationProductionStage', {
+                env: {
+                    account: this.account,
+                    region: this.region,
+                },
+            }),
+        );
     }
 }

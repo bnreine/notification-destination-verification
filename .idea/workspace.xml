@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a05d420-3c84-4791-9a2c-837cb372122e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="4a05d420-3c84-4791-9a2c-837cb372122e" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/lib/notification-destination-verification-lambda-stack.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/production-stage.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/notification-destination-verification.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bin/notification-destination-verification.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/notification-destination-verification-stack.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/notification-destination-verification.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/notification-destination-verification.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pipeline-stack.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pipeline-stack.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +75,17 @@
       <option name="presentableId" value="Default" />
       <updated>1790170658027</updated>
       <workItem from="1790170659244" duration="1702000" />
-      <workItem from="1790172566246" duration="1884000" />
+      <workItem from="1790172566246" duration="3929000" />
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <option name="closed" value="true" />
+      <created>1790174519920</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1790174519920</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,5 +100,20 @@
         <option value="$PROJECT_DIR$/lib/pipeline-stack.d.ts" />
       </list>
     </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
 </project>
