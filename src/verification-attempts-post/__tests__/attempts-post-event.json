@@ -1,0 +1,29 @@
+{
+  "headers": {
+    "accept": "application/json;v=2",
+    "accept-encoding": "gzip, deflate, br",
+    "authorization": "abcd",
+    "content-length": "33",
+    "content-type": "application/json",
+    "host": "o1ujxahgeg.execute-api.us-east-1.amazonaws.com",
+    "postman-token": "be820a98-5967-40ed-82f4-b4c8b49f7c3d",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "x-amzn-trace-id": "Root=1-6a0f66cd-35667e5b4e5a34b01e589320",
+    "x-forwarded-for": "179.218.10.163",
+    "x-forwarded-port": "443",
+    "x-forwarded-proto": "https"
+  },
+  "requestContext": {
+    "authorizer": {
+      "jwt": {
+        "claims": {
+          "sub": "44085488-0091-707c-2208-9b6753027a15"
+        }
+      }
+    }
+  },
+  "body": "{\"code\":\"555555\"}",
+  "pathParameters": {
+    "destinationId": "5589afa5-7f7e-4e31-86f4-102118e5d4a8"
+  }
+}

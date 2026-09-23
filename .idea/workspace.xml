@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a05d420-3c84-4791-9a2c-837cb372122e" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/lib/notification-destination-verification-lambda-stack.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/production-stage.ts" afterDir="false" />
+    <list default="true" id="4a05d420-3c84-4791-9a2c-837cb372122e" name="Changes" comment="adding in the prod stage and lambda stck empty">
+      <change afterPath="$PROJECT_DIR$/.npmrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/verification-attempts-post/__tests__/attempts-post-event.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/verification-attempts-post/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/verification-attempts-post/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pipeline-stack.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pipeline-stack.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/notification-destination-verification-lambda-stack.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/notification-destination-verification-lambda-stack.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +50,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "Shell Script.attempts-post.executor": "Run",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
@@ -60,6 +66,23 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="attempts-post" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="sam local invoke NotificationDestinationVerificationAttemptsPostLambda2686B433 -t cdk.out/assembly-NotificationDestinationVerificationPipelineStack-NotificationDestinationVerificationProductionStage/NotificationDestinationVerificationPipelineStackNotificationroductionStageNotificationDestinationVerificationLambdaStack16BEE49C.template.json --parameter-overrides ParameterKey=SsmParameterValuenotificationssharedlayerarnC96584B6F00A464EAD1953AFF4B05118Parameter,ParameterValue=&quot;arn:aws:lambda:us-east-1:010273536955:layer:SharedLayer27DFABF0:6&quot; --region us-east-1 --profile default -e src/verification-attempts-post/__tests__/attempts-post-event.json" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="false" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -75,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1790170658027</updated>
       <workItem from="1790170659244" duration="1702000" />
-      <workItem from="1790172566246" duration="3929000" />
+      <workItem from="1790172566246" duration="7786000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -85,7 +108,15 @@
       <option name="project" value="LOCAL" />
       <updated>1790174519920</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="adding in the prod stage and lambda stck empty">
+      <option name="closed" value="true" />
+      <created>1790185780252</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1790185780252</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,6 +129,12 @@
         <option value="$PROJECT_DIR$/test/notification-destination-verification.test.js" />
         <option value="$PROJECT_DIR$/lib/pipeline-stack.js" />
         <option value="$PROJECT_DIR$/lib/pipeline-stack.d.ts" />
+        <option value="$PROJECT_DIR$/lib/production-stage.js" />
+        <option value="$PROJECT_DIR$/lib/production-stage.d.ts" />
+        <option value="$PROJECT_DIR$/lib/notification-destination-verification-lambda-stack.js" />
+        <option value="$PROJECT_DIR$/lib/notification-destination-verification-lambda-stack.d.ts" />
+        <option value="$PROJECT_DIR$/src/verification-attempts-post/index.js" />
+        <option value="$PROJECT_DIR$/src/verification-attempts-post/index.d.ts" />
       </list>
     </option>
   </component>
@@ -114,6 +151,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="adding in the prod stage and lambda stck empty" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding in the prod stage and lambda stck empty" />
   </component>
 </project>

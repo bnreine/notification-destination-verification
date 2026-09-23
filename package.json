@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "postinstall": "npm ci --prefix src/verification-attempts-post",
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
@@ -15,10 +16,12 @@
     "ts-jest": "^29",
     "aws-cdk": "2.1129.0",
     "ts-node": "^10.9.2",
-    "typescript": "~5.9.3"
+    "typescript": "~5.9.3",
+    "esbuild": "^0.25.0"
   },
   "dependencies": {
     "aws-cdk-lib": "^2.260.0",
-    "constructs": "^10.5.0"
+    "constructs": "^10.5.0",
+    "@bnreine/cdk-constructs": "^0.1.2"
   }
 }
