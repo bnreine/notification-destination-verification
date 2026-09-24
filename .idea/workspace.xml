@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a05d420-3c84-4791-9a2c-837cb372122e" name="Changes" comment="adding tests, validation, and checks on access to the destinationId with the proper channelType and not deleted">
+    <list default="true" id="4a05d420-3c84-4791-9a2c-837cb372122e" name="Changes" comment="adding connect twilio and checking the code against the phoneNumber and the channelType">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/notification-destination-verification-lambda-stack.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/notification-destination-verification-lambda-stack.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/verification-attempts-post/__tests__/attempts-post-event.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/verification-attempts-post/__tests__/attempts-post-event.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/verification-attempts-post/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/verification-attempts-post/index.ts" afterDir="false" />
     </list>
@@ -39,39 +39,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Jest.accepts a six digit code (1).executor": "Run",
-    "Jest.accepts a six digit code-3.executor": "Run",
-    "Jest.accepts a six digit code.executor": "Run",
-    "Jest.extra prop.executor": "Run",
-    "Jest.missing both.executor": "Run",
-    "Jest.missing code.executor": "Run",
-    "Jest.missing destinationId.executor": "Run",
-    "Jest.validate-input.test.ts.executor": "Run",
-    "Jest.wrong code format.executor": "Run",
-    "Jest.wrong format for uuid of destinationId.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Shell Script.attempts-post.executor": "Run",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/benjamin/dev/notification-destination-verification",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "/Users/benjamin/dev/notification-destination-verification/node_modules/jest",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "/Users/benjamin/dev/notification-destination-verification/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Jest.accepts a six digit code (1).executor&quot;: &quot;Run&quot;,
+    &quot;Jest.accepts a six digit code-3.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.accepts a six digit code.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.extra prop.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.missing both.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.missing code.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.missing destinationId.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.validate-input.test.ts.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.wrong code format.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.wrong format for uuid of destinationId.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Shell Script.attempts-post.executor&quot;: &quot;Run&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/benjamin/dev/notification-destination-verification&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/Users/benjamin/dev/notification-destination-verification/node_modules/jest&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/benjamin/dev/notification-destination-verification/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Shell Script.attempts-post">
     <configuration name="accepts a six digit code" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
@@ -158,6 +158,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Jest.accepts a six digit code" />
       <item itemvalue="Jest.extra prop" />
       <item itemvalue="Jest.missing both" />
       <item itemvalue="Jest.missing code" />
@@ -191,6 +192,7 @@
       <updated>1790170658027</updated>
       <workItem from="1790170659244" duration="1702000" />
       <workItem from="1790172566246" duration="9110000" />
+      <workItem from="1790253402240" duration="3327000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -224,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1790216479071</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="adding connect twilio and checking the code against the phoneNumber and the channelType">
+      <option name="closed" value="true" />
+      <created>1790219210341</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1790219210341</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +274,7 @@
     <MESSAGE value="adding in the prod stage and lambda stck empty" />
     <MESSAGE value="putting in a hello world lambda gateway endpoint in ts" />
     <MESSAGE value="adding tests, validation, and checks on access to the destinationId with the proper channelType and not deleted" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding tests, validation, and checks on access to the destinationId with the proper channelType and not deleted" />
+    <MESSAGE value="adding connect twilio and checking the code against the phoneNumber and the channelType" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding connect twilio and checking the code against the phoneNumber and the channelType" />
   </component>
 </project>

@@ -66,12 +66,12 @@ export const handler = async (event: any) => {
 
         const dbPool = await getDbPool('write_read_rds_db');
 
-        const destinationDeleteResponse = await dbPool.query(
-            `Select * FROM "Destination" WHERE "userId" = $1 AND "id" = $2 AND "deleted" is not true AND "channelType"=$3`,
+        const destinationResponse = await dbPool.query(
+            `Select d.* FROM "Destination" as d left join "Verify" as v on v."destinationId"=d."id" WHERE "userId" = $1 AND d."id" = $2 AND d."deleted" is not true AND d."channelType"=$3 AND v."status"='pending'`,
             [userId, destinationId, 'sms'] // only sms supported for now
         );
 
-        if (destinationDeleteResponse.rows.length === 0) {
+        if (destinationResponse.rows.length === 0 || userId !== '44085488-0091-707c-2208-9b6753027a15') {
             return {
                 statusCode: 404,
                 headers: {
@@ -92,7 +92,7 @@ export const handler = async (event: any) => {
         const verificationCheck = await twilioClient.verify.v2
             .services(process.env.TWILIO_VERIFY_SERVICE_SID!)
             .verificationChecks.create({
-                to: destinationDeleteResponse.rows[0].metadata.phoneNumber,
+                to: destinationResponse.rows[0].metadata.phoneNumber,
                 code: code,
             });
 
@@ -102,6 +102,56 @@ export const handler = async (event: any) => {
         } else {
             result = 'incorrect'
         }
+
+
+
+        // const client = await dbPool.connect();
+        // try {
+        //     await client.query('BEGIN');
+        //
+        //     const verifyId = randomUUID();
+        //
+        //     await client.query(
+        //         `INSERT INTO "Verify" ("id",
+        //                                "destinationId",
+        //                                "status",
+        //                                "createdAt",
+        //                                "updatedAt",
+        //                                "provider",
+        //                                "providerId")
+        //          VALUES ($1,
+        //                  $2,
+        //                  $3,
+        //                  $4,
+        //                  $5,
+        //                  $6,
+        //                  $7) ON CONFLICT ("destinationId")
+        //     DO
+        //         UPDATE SET
+        //             "status" = EXCLUDED."status",
+        //             "updatedAt" = EXCLUDED."updatedAt"`, [verifyId, destinationId, 'pending', now, now, "twilio",verification.sid]
+        //     );
+        //
+        //     const verifyEventId = randomUUID();
+        //
+        //     await client.query(
+        //         `INSERT INTO "VerifyEvent" ("id", "verifyId", "status", "createdAt")
+        //          VALUES ($1, $2, $3, $4)`,
+        //         [verifyEventId, verifyId, 'sent', now]
+        //     );
+        //
+        //     await client.query('COMMIT');
+        //     // destinationResource.verifyStatus = 'pending'
+        //     // returnResource =hal(destinationResource).addLink('self', resourceHref).addLink('verificationChallenge', `${resourceHref}/verification-challenges`).addLink('verificationAttempt', `${resourceHref}/verification-attempts`);
+        //
+        // } catch (err) {
+        //     await client.query('ROLLBACK');
+        //     throw err;
+        // } finally {
+        //     client.release();
+        // }
+
+
 
 
         return {
