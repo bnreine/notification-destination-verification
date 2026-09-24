@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a05d420-3c84-4791-9a2c-837cb372122e" name="Changes" comment="checking that the status is pending before allowing the code verify, also applying run in band for the jest tests so that the build machine doesn't run out of memory and adding a flag for only my user to run this endpoint for now">
+    <list default="true" id="4a05d420-3c84-4791-9a2c-837cb372122e" name="Changes" comment="repush">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pipeline-stack.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pipeline-stack.ts" afterDir="false" />
     </list>
@@ -190,7 +190,7 @@
       <updated>1790170658027</updated>
       <workItem from="1790170659244" duration="1702000" />
       <workItem from="1790172566246" duration="9110000" />
-      <workItem from="1790253402240" duration="3868000" />
+      <workItem from="1790253402240" duration="4872000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -240,7 +240,23 @@
       <option name="project" value="LOCAL" />
       <updated>1790266983507</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update heap amount and up the memory on the build machine">
+      <option name="closed" value="true" />
+      <created>1790267451990</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1790267451990</updated>
+    </task>
+    <task id="LOCAL-00008" summary="repush">
+      <option name="closed" value="true" />
+      <created>1790270797614</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1790270797614</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,6 +298,8 @@
     <MESSAGE value="adding tests, validation, and checks on access to the destinationId with the proper channelType and not deleted" />
     <MESSAGE value="adding connect twilio and checking the code against the phoneNumber and the channelType" />
     <MESSAGE value="checking that the status is pending before allowing the code verify, also applying run in band for the jest tests so that the build machine doesn't run out of memory and adding a flag for only my user to run this endpoint for now" />
-    <option name="LAST_COMMIT_MESSAGE" value="checking that the status is pending before allowing the code verify, also applying run in band for the jest tests so that the build machine doesn't run out of memory and adding a flag for only my user to run this endpoint for now" />
+    <MESSAGE value="update heap amount and up the memory on the build machine" />
+    <MESSAGE value="repush" />
+    <option name="LAST_COMMIT_MESSAGE" value="repush" />
   </component>
 </project>

@@ -50,6 +50,8 @@ export class PipelineStack extends cdk.Stack {
             }),
             synthCodeBuildDefaults: {
                 buildEnvironment: {
+                    buildImage: cdk.aws_codebuild.LinuxBuildImage.STANDARD_7_0,
+                    computeType: cdk.aws_codebuild.ComputeType.MEDIUM,
                     environmentVariables: {
                         NODE_OPTIONS: {
                             value: '--max-old-space-size=4096',
