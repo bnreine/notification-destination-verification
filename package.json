@@ -6,7 +6,7 @@
     "postinstall": "npm ci --prefix src/verification-attempts-post",
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "jest",
+    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js",
     "cdk": "cdk"
   },
   "devDependencies": {

@@ -8,6 +8,8 @@
     ],
     "declaration": true,
     "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
     "strictNullChecks": true,
     "noImplicitThis": true,

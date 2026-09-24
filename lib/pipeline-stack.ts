@@ -44,7 +44,7 @@ export class PipelineStack extends cdk.Stack {
                     connectionArn: githubConnectionArn,
                     triggerOnPush: true,
                 }),
-                commands: ['npm ci', 'npm run build', 'npx cdk synth'],
+                commands: ['npm ci', 'npm run build', 'npm test', 'npx cdk synth'],
             }),
             synthCodeBuildDefaults: {
                 buildEnvironment: {
