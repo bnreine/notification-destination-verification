@@ -15,6 +15,7 @@ export class PipelineStack extends cdk.Stack {
     constructor(scope: Construct, id: string, props: PipelineStackProps) {
         super(scope, id, props);
 
+
         const githubConnectionArn = cdk.Fn.importValue('GlobalGitHubConnectionArn');
 
         const npmSecretName = 'npm_read_write_github_access_cdk-constructs';
