@@ -6,6 +6,7 @@ import {
     GetSecretValueCommand,
     SecretsManagerClient,
 } from "@aws-sdk/client-secrets-manager";
+import {randomUUID} from "node:crypto";
 
 const secretsManager = new SecretsManagerClient({});
 
@@ -67,7 +68,7 @@ export const handler = async (event: any) => {
         const dbPool = await getDbPool('write_read_rds_db');
 
         const destinationResponse = await dbPool.query(
-            `Select d.* FROM "Destination" as d left join "Verify" as v on v."destinationId"=d."id" WHERE "userId" = $1 AND d."id" = $2 AND d."deleted" is not true AND d."channelType"=$3 AND v."status"='pending'`,
+            `Select d."metadata" as "metadata", v."id" as "verifyId" FROM "Destination" as d left join "Verify" as v on v."destinationId"=d."id" WHERE "userId" = $1 AND d."id" = $2 AND d."deleted" is not true AND d."channelType"=$3 AND v."status"='pending'`,
             [userId, destinationId, 'sms'] // only sms supported for now
         );
 
@@ -96,71 +97,52 @@ export const handler = async (event: any) => {
                 code: code,
             });
 
-        let result
+        let verifyStatus
+        let verifyEventStatus
         if (verificationCheck.status === 'approved') {
-            result = 'correct'
+            verifyStatus = 'verified'
+            verifyEventStatus = 'verified'
         } else {
-            result = 'incorrect'
+            verifyStatus = 'pending'
+            verifyEventStatus = 'failed'
         }
 
 
 
-        // const client = await dbPool.connect();
-        // try {
-        //     await client.query('BEGIN');
-        //
-        //     const verifyId = randomUUID();
-        //
-        //     await client.query(
-        //         `INSERT INTO "Verify" ("id",
-        //                                "destinationId",
-        //                                "status",
-        //                                "createdAt",
-        //                                "updatedAt",
-        //                                "provider",
-        //                                "providerId")
-        //          VALUES ($1,
-        //                  $2,
-        //                  $3,
-        //                  $4,
-        //                  $5,
-        //                  $6,
-        //                  $7) ON CONFLICT ("destinationId")
-        //     DO
-        //         UPDATE SET
-        //             "status" = EXCLUDED."status",
-        //             "updatedAt" = EXCLUDED."updatedAt"`, [verifyId, destinationId, 'pending', now, now, "twilio",verification.sid]
-        //     );
-        //
-        //     const verifyEventId = randomUUID();
-        //
-        //     await client.query(
-        //         `INSERT INTO "VerifyEvent" ("id", "verifyId", "status", "createdAt")
-        //          VALUES ($1, $2, $3, $4)`,
-        //         [verifyEventId, verifyId, 'sent', now]
-        //     );
-        //
-        //     await client.query('COMMIT');
-        //     // destinationResource.verifyStatus = 'pending'
-        //     // returnResource =hal(destinationResource).addLink('self', resourceHref).addLink('verificationChallenge', `${resourceHref}/verification-challenges`).addLink('verificationAttempt', `${resourceHref}/verification-attempts`);
-        //
-        // } catch (err) {
-        //     await client.query('ROLLBACK');
-        //     throw err;
-        // } finally {
-        //     client.release();
-        // }
+        const client = await dbPool.connect();
+        try {
+            await client.query('BEGIN');
 
+            const now = new Date()
 
+            await client.query(
+                `Update "Verify" set "status"= $1, "updatedAt"=$2 where "destinationId"=$3`, [verifyStatus, now, destinationId]
+            );
+
+            const verifyEventId = randomUUID();
+
+            await client.query(
+                `INSERT INTO "VerifyEvent" ("id", "verifyId", "status", "createdAt")
+                 VALUES ($1, $2, $3, $4)`,
+                [verifyEventId, destinationResponse.rows[0].verifyId, verifyEventStatus, now]
+            );
+
+            await client.query('COMMIT');
+
+        } catch (err) {
+            await client.query('ROLLBACK');
+            throw err;
+        } finally {
+            client.release();
+        }
 
 
         return {
             statusCode: 201,
             headers: {
-                // 'Location': resourceHref,
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({correct: result}),
+            body: JSON.stringify({status: verifyStatus}),
         };
 
     } catch (err: any) {
