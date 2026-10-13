@@ -143,7 +143,7 @@
       <method v="2" />
     </configuration>
     <configuration name="attempts-post" type="ShConfigurationType">
-      <option name="SCRIPT_TEXT" value="sam local invoke NotificationDestinationVerificationAttemptsPostLambda2686B433 -t cdk.out/assembly-NotificationDestinationVerificationPipelineStack-NotificationDestinationVerificationProductionStage/NotificationDestinationVerificationPipelineStackNotificationroductionStageNotificationDestinationVerificationLambdaStack16BEE49C.template.json --parameter-overrides ParameterKey=SsmParameterValuenotificationssharedlayerarnC96584B6F00A464EAD1953AFF4B05118Parameter,ParameterValue=&quot;arn:aws:lambda:us-east-1:010273536955:layer:SharedLayer27DFABF0:6&quot; --region us-east-1 --profile default -e src/verification-attempts-post/__tests__/attempts-post-event.json" />
+      <option name="SCRIPT_TEXT" value="sam local invoke NotificationDestinationVerificationAttemptsPostLambda2686B433 --docker-network notifications-dev -t cdk.out/assembly-NotificationDestinationVerificationPipelineStack-NotificationDestinationVerificationProductionStage/NotificationDestinationVerificationPipelineStackNotificationroductionStageNotificationDestinationVerificationLambdaStack16BEE49C.template.json --parameter-overrides ParameterKey=SsmParameterValuenotificationssharedlayerarnC96584B6F00A464EAD1953AFF4B05118Parameter,ParameterValue=&quot;arn:aws:lambda:us-east-1:010273536955:layer:SharedLayer27DFABF0:10&quot; --region us-east-1 --profile default -e src/verification-attempts-post/__tests__/attempts-post-event.json" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="" />
       <option name="SCRIPT_OPTIONS" value="" />

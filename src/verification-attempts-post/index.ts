@@ -72,7 +72,7 @@ export const handler = async (event: any) => {
             [userId, destinationId, 'sms'] // only sms supported for now
         );
 
-        if (destinationResponse.rows.length === 0 || userId !== '44085488-0091-707c-2208-9b6753027a15') {
+        if (destinationResponse.rows.length === 0) {
             return {
                 statusCode: 404,
                 headers: {

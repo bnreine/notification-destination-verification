@@ -105,7 +105,7 @@ export class NotificationDestinationVerificationLambdaStack extends cdk.Stack {
             },
             securityGroups: [lambdaSecurityGroup],
             environment: {
-                // NODE_ENV: "sam-local",
+                // NODE_ENV: "dev",
                 TWILIO_ACCOUNT_SID: 'AC62aabf7bd88076aa222941d87b1b6a42',
                 TWILIO_VERIFY_SERVICE_SID: 'VA75afa922adeff0329fc4753281948008',
                 TWILIO_VERIFY_SECRET_NAME: 'otp-verify-twilio',
